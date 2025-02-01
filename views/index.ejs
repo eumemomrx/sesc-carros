@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consulta carros</title>
+</head>
+<body>
+    <h1>Carros</h1>
+    <form action="/" method="get">
+        <label for="placa">Digite a placa </label>
+        <input type="text" id="placa" name="placa" required value="<%= placa || '' %>">
+        <button type="submit">Buscar</button>
+    </form>
+    <% if(placa) { %>
+        <hr>
+        <h2>Resultado: </h2>
+        <% if (carro) { %>
+            <p><strong>Veiculo:</strong><%= carro.Veiculo %></p>
+            <p><strong>Placa:</strong><%= carro.Placa %></p>
+            <p><strong>Nome:</strong><%= carro.Nome %></p>
+            <p><strong>Setor:</strong><%= carro.Setor %></p>
+        <% } else { %>
+            <p>Placa "<%= placa %>" nao encontrado</p>
+        <% } %>
+    <% } %>
+        
+</body>
+</html>
